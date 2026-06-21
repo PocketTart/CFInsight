@@ -19,3 +19,5 @@ groq==0.31.0
 
 python-multipart==0.0.20
 dotenv
+
+openai
