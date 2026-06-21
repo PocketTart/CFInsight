@@ -806,3 +806,48 @@ Provides:
 CFInsight uses publicly available Codeforces data.
 
 Suspicion scores and AI-generated evaluations are analytical estimates intended for educational and informational purposes only. They should not be interpreted as evidence of cheating, plagiarism, AI usage, or misconduct.
+
+
+# Live Deployment
+
+## API Base URL
+
+https://pocketskye-cfinsight.hf.space
+
+## Interactive API Documentation
+
+https://pocketskye-cfinsight.hf.space/docs
+
+## Available Endpoints
+
+### Health Check
+
+GET /health
+
+### Generate Analytics Report
+
+GET /report/{handle}
+
+Example:
+
+GET /report/tourist
+
+### Search Leaderboard
+
+GET /leaderboard
+
+### Handle Suggestions
+
+GET /suggest?prefix=tou
+
+### Cache Statistics
+
+GET /cache-stats
+
+### Performance Metrics
+
+GET /metrics
+
+---
+
+The backend is deployed on Hugging Face Spaces using Docker and connected to Neon PostgreSQL for persistent storage.
