@@ -21,6 +21,8 @@ from core.trie_store import handle_frequency
 
 from repositories.search_stats_repository import SearchStatsRepository
 from repositories.user_repository import UserRepository
+from fastapi.middleware.cors import CORSMiddleware
+
 # Create tables
 Base.metadata.create_all(bind=engine)
 
@@ -30,7 +32,13 @@ app = FastAPI(
     title="CFInsight",
     version="1.0.0"
 )
-
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 @app.on_event("startup")
 def load_trie():
 
